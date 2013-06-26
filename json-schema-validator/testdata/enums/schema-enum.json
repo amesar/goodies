@@ -1,0 +1,42 @@
+{
+  "$schema" : "http://json-schema.org/draft-03/schema#",
+  "id" : "http://json-schema.org/draft-03/schema#",
+  "description" : "Test JSON Schema",
+  "type" : "object",
+  "properties" : {
+	"id" : {
+	  "type" : "string",
+	  "required" : true
+	},
+	"stateCode": {
+		"type": "string" ,
+		"enum" :[ "ma", "ny", "tx", "ca" ]
+	},
+	"continentCode": {
+		"type": "integer" ,
+		"enum" : [ 1 ,2 ,3 ,4 ,5, 6, 7 ]
+	},
+
+	"stateCodes": {
+		"type": "array",
+		"required" : false,
+		"items": {
+			"type": "string",
+			"enum" :[ "ma", "ny", "tx", "ca" ]
+		},
+		"minItems": 0,
+		"uniqueItems": true
+	},
+	"continentCodes": {
+		"type": "array",
+		"required" : false,
+		"items": {
+			"type": "integer",
+			"enum" : [ 1 ,2 ,3 ,4 ,5, 6, 7 ]
+		},
+		"minItems": 0,
+		"uniqueItems": true
+	}
+  },
+  "additionalProperties" : false
+}
