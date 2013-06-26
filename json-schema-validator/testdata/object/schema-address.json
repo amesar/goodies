@@ -1,0 +1,29 @@
+{
+	"$schema" : "http://json-schema.org/draft-03/schema#",
+	"id" : "http://json-schema.org/draft-03/schema#",
+	"description" : "Address Schema",
+	"type" : "object",
+	"properties" : {
+		"street" : { 
+			"type" : "string", 
+			"required" : true 
+		},
+		"city" : { 
+			"type" : "string" 
+		},
+		"state" : { 
+			"type" : "string" 
+		},
+		"country" : { 
+			"type" : "string" 
+		},
+		"zip" : { 
+			"type" : "string" 
+		},
+		"location" : { 
+			"$ref": "resource:/schema-geographicLocation.json",
+			"required" : true 
+		}
+	},
+	"additionalProperties" : false
+}

@@ -1,0 +1,21 @@
+{
+	"$schema" : "http://json-schema.org/draft-03/schema#",
+	"id" : "http://json-schema.org/draft-03/schema#",
+	"description" : "Test JSON Schema",
+	"type" : "object",
+	"properties" : {
+		"lat" : {
+			"type" : "number",
+			"required" : true,
+            "minimum" : -90.00,
+            "maximum" : 90.00
+		},
+		"lng": {
+			"type": "number" ,
+			"required" : true,
+            "minimum" : -180.00,
+            "maximum" : 180.00
+		}
+	},
+	"additionalProperties" : false
+}

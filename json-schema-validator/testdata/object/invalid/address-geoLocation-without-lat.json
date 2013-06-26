@@ -1,0 +1,8 @@
+{
+	"street" : "1 main",
+	"city" : "boston",
+	"state": "MA",
+	"location" : {
+		"lng" : 71.061667
+	}
+}
