@@ -36,6 +36,10 @@
 
   <util:list id="configRecords" >
      <bean class="com.amm.jsonschema.validator.GenericConfigRecord" >
+        <property name="samplesDir" value="${cfg.baseDir}/basic" />
+        <property name="schemaFile" value="${cfg.baseDir}/basic/schema-basic.json" />
+     </bean>
+     <bean class="com.amm.jsonschema.validator.GenericConfigRecord" >
         <property name="samplesDir" value="${cfg.baseDir}/enums" />
         <property name="schemaFile" value="${cfg.baseDir}/enums/schema-enum.json" />
      </bean>
