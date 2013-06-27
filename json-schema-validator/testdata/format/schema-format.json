@@ -1,0 +1,45 @@
+{
+  "$schema" : "http://json-schema.org/draft-03/schema#",
+  "id" : "http://json-schema.org/draft-03/schema#",
+  "description" : "Test JSON Schema",
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "title": "ID",
+      "type" : "string",
+      "required" : true
+    },
+    "email" : {
+      "title" : "Email",
+      "type" : "string",
+      "format" : "email"
+    },
+    "uri" : {
+      "title" : "uri",
+      "type" : "string",
+      "format" : "uri"
+    },
+
+    "startDateTime" : {
+      "title" : "Sample DateTime",
+      "type" : "string",
+      "format" : "date-time"
+    },
+    "startDate" : {
+      "title" : "Sample Date",
+      "type" : "string",
+      "format" : "date"
+    },
+    "startTime" : {
+      "title" : "Sample Time",
+      "type" : "string",
+      "format" : "time"
+    },
+    "startUtcMillis" : {
+      "title" : "Sample UtcMillis - millis since 1 jan 1970 UTC - int or float!",
+      "type" : "number",
+      "format" : "utc-millisec"
+    }
+  },
+  "additionalProperties" : false
+}
