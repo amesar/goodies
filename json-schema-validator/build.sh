@@ -1,3 +1,3 @@
 
-mvn -DskipTests=true clean install | tee log-build.txt
+mvn -DskipTests=true clean package | tee log-build.txt
 
