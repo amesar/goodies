@@ -13,6 +13,7 @@ public class JsonValidatorUtils {
 			info("VALID: "+msg);
 			//info(msg+" validates");
 		} else {
+			info("INVALID: "+msg);
 			info(array.size()+ " ERRORS: ");
 			for (String str : array)
 				info("  "+str);
