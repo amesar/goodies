@@ -188,7 +188,7 @@
             <artifactId>equals</artifactId>
             <version>1.0.0</version>
             <scope>system</scope>
-            <systemPath>${basedir}/lib/equalexperts/json-schema-validator-0.3.jar</systemPath>
+            <systemPath>${basedir}/lib/equalexperts/equals-json-schema-validator-0.3.jar</systemPath>
         </dependency>
 
         <!-- Test -->
