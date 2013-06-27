@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+  
+<suite name="JSON Schema Test Suite" >
+  <test name="JSON Schema Tests"   >
+    <groups>
+      <run>
+        <exclude name="ref" />
+      </run>
+    </groups>
+    <classes>
+      <class name="com.amm.jsonschema.validator.ValidTest" />
+      <class name="com.amm.jsonschema.validator.InvalidTest" />
+<!--
+      <class name="com.amm.jsonschema.validator.test.TestFactory"/>
+- -
+      <class name="com.amm.jsonschema.validator.ObjectTest" />
+      <class name="com.amm.jsonschema.validator.JsonSchemaTest" />
+      <class name="com.amm.jsonschema.validator.RefSchemaTest" />
+- -
+-->
+    </classes>
+  </test>
+
+<!--
+  <test name="DynamicTest">
+    <class name= "com.amm.jsonschema.validator.DynamicTest"/>
+  </test>
+-->
+
+</suite>

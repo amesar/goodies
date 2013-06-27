@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-3.0.xsd
+      http://www.springframework.org/schema/util 
+      http://www.springframework.org/schema/util/spring-util-3.0.xsd" >
+
+<!-- ** Properties ** -->
+
+  <bean id="propertyConfigurer"
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+    <property name="locations" >
+      <list>
+        <value>classpath:appContext.properties</value>
+      </list>
+    </property>
+  </bean>
+
+<!-- ** Validator Factory Implementations ** -->
+
+  <alias alias="validatorFactory" name="${cfg.jsonValidatorFactory}" />
+
+  <bean id="fgeJsonValidatorFactory" class="com.amm.jsonschema.validator.fge.FgeJsonValidatorFactory" >
+    <property name="logWarnings" value="${cfg.fge.logWarnings}" />
+  </bean>
+
+  <bean id="equalExpertsJsonValidatorFactory" class="com.amm.jsonschema.validator.equalexperts.EqualExpertsJsonValidatorFactory" />
+
+<!-- ** Test config  ** -->
+
+  <util:list id="configRecords" >
+     <bean class="com.amm.jsonschema.validator.GenericConfigRecord" >
+        <property name="samplesDir" value="${cfg.baseDir}/enums" />
+        <property name="schemaFile" value="${cfg.baseDir}/enums/schema-enum.json" />
+     </bean>
+     <bean class="com.amm.jsonschema.validator.GenericConfigRecord" >
+        <property name="samplesDir" value="${cfg.baseDir}/format" />
+        <property name="schemaFile" value="${cfg.baseDir}/format/schema-format.json" />
+     </bean>
+     <bean class="com.amm.jsonschema.validator.GenericConfigRecord" >
+        <property name="samplesDir" value="${cfg.baseDir}/object" />
+        <property name="schemaFile" value="${cfg.baseDir}/object/schema-address.json" />
+     </bean>
+  </util:list>
+
+</beans>
