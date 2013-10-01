@@ -1,0 +1,77 @@
+{
+	"$schema" : "http://json-schema.org/draft-03/schema#",
+	"id" : "Site",
+	"description" : "Site",
+	"type" : "object",
+	"properties" : {
+		"id" : {
+			"description" : "Site ID on the exchange.",
+			"type" : "string",
+			"required" : false
+		},
+		"name" : {
+			"description" : "Site name (may be masked at publisher’s request).",
+			"type" : "string",
+			"required" : false
+		},
+		"domain" : {
+			"description" : "Domain of the site, used for advertiser side blocking",
+			"type" : "string",
+			"required" : false
+		},
+		"cat" : {
+			"description" : "Array of IAB content categories for the overall site.",
+			"type": "array",
+			"required" : false,
+			"items": { "type": "string" }
+		},
+		"sectioncat" : {
+			"description" : "Array of IAB content categories for the current subsection of the site.",
+			"type": "array",
+			"required" : false,
+			"items": { "type": "string" }
+		},
+		"pagecat" : {
+			"description" : "Array of IAB content categories for the current page",
+			"type": "array",
+			"required" : false,
+			"items": { "type": "string" }
+		},
+		"page" : {
+			"description" : "URL of the page where the impression will be shown.",
+			"type" : "string",
+			"required" : false
+		},
+		"privacypolicy" : {
+			"description" : "Specifies whether the site has a privacy policy. “1” means there is a policy. “0” means there is not.",
+			"type" : "string",
+			"required" : false,
+			"minimum": 0,
+			"maximum": 1
+		},
+		"ref" : {
+			"description" : "Referrer URL that caused navigation to the current page.",
+			"type" : "string",
+			"required" : false
+		},
+		"search" : {
+			"description" : "Search string that caused navigation to the current page.",
+			"type" : "string",
+			"required" : false
+		},
+		"publisher" : {
+			"$ref" : "Publisher.json",
+			"required" : false
+		},
+		"content" : {
+			"$ref" : "Content.json",
+			"required" : false
+		},
+		"keywords" : {
+			"description" : "List of keywords describing this site in a comma separated string.",
+			"type" : "string",
+			"required" : false
+		}
+	},
+	"additionalProperties" : false
+}

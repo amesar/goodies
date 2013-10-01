@@ -1,0 +1,81 @@
+{
+	"$schema" : "http://json-schema.org/draft-03/schema#",
+	"id" : "Segment",
+	"description" : "Segment",
+	"type" : "object",
+	"properties" : {
+		"linearity" : {
+			"type" : "integer",
+			"required" : true
+		},
+		"minduration" : {
+			"type" : "integer",
+			"required" : true
+		},
+		"maxduration" : {
+			"type" : "integer",
+			"required" : true
+		},
+		"protocol" : {
+			"type" : "integer",
+			"required" : true
+		},
+		"w" : {
+			"type" : "integer",
+			"required" : false
+		},
+		"h" : {
+			"type" : "integer",
+			"required" : false
+		},
+		"startdelay" : {
+			"type" : "integer",
+			"required" : false
+		},
+		"sequence" : {
+			"type" : "integer",
+			"required" : false
+		},
+		"battr" : { 
+			"type": "array",
+			"required" : false,
+			"items": { "type": "integer" }
+		},
+		"maxextended" : {
+			"type" : "integer",
+			"required" : false
+		},
+		"minbitrate" : {
+			"type" : "integer",
+			"required" : false
+		},
+		"maxbitrate" : {
+			"type" : "integer",
+			"required" : false
+		},
+		"boxingallowed" : {
+			"type" : "integer",
+			"required" : false
+		},
+		"playbackmethod" : { 
+			"type": "array",
+			"required" : false,
+			"items": { "type": "integer" }
+		},
+		"delivery" : { 
+			"type": "array",
+			"required" : false,
+			"items": { "type": "integer" }
+		},
+		"pos" : {
+			"type" : "integer",
+			"required" : false
+		},
+		"companionad" : {
+			"type": "array",
+			"required" : false,
+			"items": { "$ref": "Banner.json" }
+		}
+	},
+	"additionalProperties" : false
+}

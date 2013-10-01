@@ -1,0 +1,78 @@
+{
+	"$schema" : "http://json-schema.org/draft-03/schema#",
+	"id" : "App",
+	"description" : "App",
+	"type" : "object",
+	"properties" : {
+		"id" : {
+			"description" : "Application ID on the exchange.",
+			"type" : "string",
+			"required" : false
+		},
+		"name" : {
+			"description" : "Application name (may be masked at publisher’s request).",
+			"type" : "string",
+			"required" : false
+		},
+		"domain" : {
+			"description" : "Domain of the site, used for advertiser side blocking",
+			"type" : "string",
+			"required" : false
+		},
+		"cat" : {
+			"description" : "Array of IAB content categories for the overall site.",
+			"type": "array",
+			"required" : false,
+			"items": { "type": "string" }
+		},
+		"sectioncat" : {
+			"description" : "Array of IAB content categories for the current subsection of the site.",
+			"type": "array",
+			"required" : false,
+			"items": { "type": "string" }
+		},
+		"pagecat" : {
+			"description" : "Array of IAB content categories for the current page",
+			"type": "array",
+			"required" : false,
+			"items": { "type": "string" }
+		},
+		"ver" : {
+			"type" : "string",
+			"required" : false
+		},
+		"bundle" : {
+			"type" : "string",
+			"required" : false
+		},
+		"privacypolicy" : {
+			"type" : "integer",
+			"required" : false
+		},
+		"paid" : {
+			"type" : "integer",
+			"required" : false,
+			"minimum": 0,
+			"maximum": 1
+		},  
+		"publisher" : {
+			"$ref" : "Publisher.json",
+			"required" : false
+		},
+		"content" : {
+			"$ref" : "Content.json",
+			"required" : false
+		},
+		"keywords" : {
+			"description" : "List of keywords describing this site in a comma separated string.",
+			"type" : "string",
+			"required" : false
+		},
+		"url" : {
+			"description" : "For QAG 1.5 compliance, an app store URL for an installed app should be passed in the bid request.",
+			"type" : "string",
+			"required" : false
+		}
+	},
+	"additionalProperties" : false
+}

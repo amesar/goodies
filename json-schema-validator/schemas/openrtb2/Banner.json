@@ -1,0 +1,41 @@
+{
+	"$schema" : "http://json-schema.org/draft-03/schema#",
+	"id" : "Banner",
+	"description" : "Banner",
+	"type" : "object",
+	"properties" : {
+		"id" : {
+			"description" : "ID uniquely identifying the content",
+			"type" : "string",
+			"required" : false
+		},
+		"w" : {
+			"description" : "Width of the impression in pixels. Since some ad types are not restricted by size this field is not required, but it’s highly recommended that this information be included when possible.",
+			"type" : "integer",
+			"required" : false
+		},
+		"h" : {
+			"description" : "Height of the impression in pixels. Since some ad types are not restricted by size this field is not required, but it’s highly recommended that this information be included when possible.",
+			"type" : "integer",
+			"required" : false
+		},
+		"pos" : {
+			"description" : "Ad Position.",
+			"type" : "integer",
+			"required" : false
+		},
+		"battr" : {
+			"description" : "Blocked creative attributes. See Table 6.3 Creative Attributes. If blank assume all types are allowed.",
+			"type": "array",
+			"required" : false,
+			"items": { "type": "integer" }
+		},
+		"btype" : {
+			"description" : "Blocked creative types. See Table 6.2 Banner Ad Types. If blank, assume all types are allowed.",
+			"type": "array",
+			"required" : false,
+			"items": { "type": "integer" }
+		}
+	},
+	"additionalProperties" : false
+}

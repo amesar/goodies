@@ -1,0 +1,80 @@
+{
+	"$schema" : "http://json-schema.org/draft-03/schema#",
+	"id" : "Content",
+	"description" : "Content",
+	"type" : "object",
+	"properties" : {
+		"id" : {
+			"description" : "ID uniquely identifying the content",
+			"type" : "string",
+			"required" : false
+		},
+		"episode" : {
+			"description" : "Content episode number (typically applies to video content).",
+			"type" : "integer",
+			"required" : false
+		},
+		"title" : {
+			"description" : "Content title.",
+			"type" : "string",
+			"required" : false
+		},
+		"series" : {
+			"description" : "Content series.",
+			"type" : "string",
+			"required" : false
+		},
+		"keywords" : {
+			"description" : "Comma separated list of keywords describing the content",
+			"type" : "string",
+			"required" : false
+		},
+		"season" : {
+			"type" : "string",
+			"required" : false
+		},
+		"url" : {
+			"type" : "string",
+			"required" : false
+		},
+		"cat" : {
+			"description" : "Array of IAB content categories for the overall site.",
+			"type": "array",
+			"required" : false,
+			"items": { "type": "string" }
+		},
+		"videoquality" : {
+			"type" : "integer",
+			"required" : false
+		},
+		"contentrating" : {
+			"type" : "string",
+			"required" : false
+		},
+		"userrating" : {
+			"type" : "string",
+			"required" : false
+		},
+		"context" : {
+			"type" : "string",
+			"required" : false
+		},
+		"livestream" : {
+			"type" : "integer",
+			"required" : false,
+			"minimum": 0,
+			"maximum": 1
+		},
+		"sourcerelationship" : {
+			"type" : "string",
+			"required" : false,
+			"minimum": 0,
+			"maximum": 1
+		},
+		"producer" : {
+			"$ref" : "Producer.json",
+			"required" : false
+		}
+	},
+	"additionalProperties" : false
+}

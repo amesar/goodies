@@ -1,0 +1,30 @@
+{
+	"$schema" : "http://json-schema.org/draft-03/schema#",
+	"id" : "Publisher",
+	"description" : "Publisher",
+	"type" : "object",
+	"properties" : {
+		"id" : {
+			"description" : "Publisher ID on the exchange.",
+			"type" : "string",
+			"required" : false
+		},
+		"name" : {
+			"description" : "Publisher name (may be masked at publisher’s request).",
+			"type" : "string",
+			"required" : false
+		},
+		"domain" : {
+			"description" : "Publisher’s highest level domain name, for example “foopub.com”.",
+			"type" : "string",
+			"required" : false
+		},
+		"cat" : {
+			"description" : "Array of IAB content categories for the publisher.",
+			"type": "array",
+			"required" : false,
+			"items": { "type": "string" }
+		}
+	},
+	"additionalProperties" : false
+}

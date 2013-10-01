@@ -1,0 +1,77 @@
+{
+	"$schema" : "http://json-schema.org/draft-03/schema#",
+	"id" : "BidRequest",
+	"description" : "BidRequest",
+	"type" : "object",
+	"properties" : {
+		"id" : {
+			"description" : "Unique ID of the bid request (i.e., the overall auction ID).",
+			"type" : "string",
+			"required" : true
+		},
+		"imp" : {
+			"description" : "Array of impression objects. Multiple impression auctions may be specified in a single bid request. At least one impression is required for a valid bid request",
+			"type": "array",
+			"required" : false,
+			"items": { "$ref": "Impression.json" }
+		},
+		"site" : {
+			"$ref" : "Site.json",
+			"required" : false
+		},
+		"user" : {
+			"$ref" : "User.json",
+			"required" : false
+		},
+		"app" : {
+			"$ref" : "App.json",
+			"required" : false
+		},
+		"device" : {
+			"$ref" : "Device.json",
+			"required" : false
+		},
+		"at" : {
+			"description" : "Auction type - 1 indicates 1st Price, others denote alternate rules.",
+			"type" : "integer",
+			"required" : false
+		},
+		"tmax" : {
+			"description" : "Maximum amount of time in milliseconds to submit a bid (e.g., 120 means the bidder has 120ms to submit a bid before the auction is complete). If this value never changes across an exchange, then the exchange can supply this information offline.",
+			"type" : "integer",
+			"required" : false
+		},
+		"wseat" : {
+			"description" : "Array of buyer seats allowed to bid on this auction. Seats are an optional feature of exchange.",
+			"type": "array",
+			"required" : false,
+			"items": { "type": "string" }
+		},
+		"allimps" : {
+			"description" : "Flag to indicate whether Exchange can verify that all impressions offered represent all of the impressions available in context (e.g., all impressions available on the web page; all impressions available for a video [pre, mid and postroll spots], etc.) to support road-blocking. A true value should only be passed if the exchange is aware of all impressions in context for the publisher. “0” means the exchange cannot verify, and “1” means that all impressions represent all impressions available.",
+			"type" : "integer",
+			"required" : false,
+			"minimum" : 0,
+			"maximum" : 1
+		},
+		"cur" : {
+			"description" : "Array of allowed currencies for bids on this bid request using ISO-4217 alphabetic codes. If only one currency is used by the exchange, this parameter is not required.",
+			"type": "array",
+			"required" : false,
+			"items": { "type": "string" }
+		},
+		"bcat" : {
+			"description" : "Blocked Advertiser Categories. Note that there is no existing categorization / taxonomy of advertiser industries.",
+			"type": "array",
+			"required" : false,
+			"items": { "type": "string" }
+		},
+		"badv" : {
+			"description" : "Array of strings of blocked top- level domains of advertisers. For example, {“company1.com”, “company2.com”}.",
+			"type": "array",
+			"required" : false,
+			"items": { "type": "string" }
+		}
+	},
+	"additionalProperties" : false
+}

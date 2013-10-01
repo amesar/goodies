@@ -1,0 +1,24 @@
+{
+	"$schema" : "http://json-schema.org/draft-03/schema#",
+	"id" : "Segment",
+	"description" : "Segment",
+	"type" : "object",
+	"properties" : {
+		"id" : {
+			"description" : "ID of a data provider’s segment applicable to the user",
+			"type" : "string",
+			"required" : false
+		},
+		"name" : {
+			"description" : "Name of a data provider’s segment applicable to the user",
+			"type" : "string",
+			"required" : false
+		},
+		"value" : {
+			"description" : "String representing the value of the segment. The method for transmitting this data should be negotiated offline with the data provider. For example for gender, “male”, or “female”, for age, “30-40”)",
+			"type" : "string",
+			"required" : false
+		}
+	},
+	"additionalProperties" : false
+}

@@ -1,0 +1,53 @@
+{
+	"$schema" : "http://json-schema.org/draft-03/schema#",
+	"id" : "BidRequest",
+	"description" : "BidRequest",
+	"type" : "object",
+	"properties" : {
+		"id" : {
+			"description" : "Unique consumer ID of this user on the exchange.",
+			"type" : "string",
+			"required" : true
+		},
+		"buyeruid" : {
+			"description" : "Buyer’s user ID for this user as mapped by exchange for the buyer.",
+			"type" : "string",
+			"required" : false
+		},
+		"yob" : {
+			"description" : "Year of birth as a 4-digit integer.",
+			"type" : "integer",
+			"required" : false,
+			"minimum": 0,
+			"maximum": 9999
+		},
+		"gender" : {
+			"description" : "Gender as “M” male, “F” female, “O” Other. (Null indicates unknown).",
+			"type" : "string",
+			"required" : false,
+			"enum" : [ "M", "F", "O" ]
+		},
+		"keywords" : {
+			"description" : "Comma separated list of keywords of consumer interests or intent.",
+			"type" : "string",
+			"required" : false
+		},
+		"customdata" : {
+			"description" : "If supported by the exchange, this is custom data that the bidder had stored in the exchange’s cookie. The string may be in base85 cookie safe characters, and be in any format. This may useful for storing user features. Note: Proper JSON encoding must be used to include “escaped” quotation marks.",
+			"type" : "string",
+			"required" : false
+		},
+		"geo" : {
+			"description" : "Home geo for the user (e.g., based off of registration data); this is different from the current location of the access device (that is by the geo object embedded in the Device Object); see Error! Reference source ot found.",
+			"$ref" : "Geo.json",
+			"required" : false
+		},
+		"data" : {
+			"description" : "Array of segment objects",
+			"type": "array",
+			"required" : false,
+			"items": { "$ref": "DataItem.json" }
+		}
+	},
+	"additionalProperties" : false
+}

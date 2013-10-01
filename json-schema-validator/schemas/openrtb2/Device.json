@@ -1,0 +1,105 @@
+{
+	"$schema" : "http://json-schema.org/draft-03/schema#",
+	"id" : "Device",
+	"description" : "Device",
+	"type" : "object",
+	"properties" : {
+		"dnt" : {
+			"description" : "If “0”, then do not track Is set to false, if “1”, then do no track is set to true in browser.",
+			"type" : "integer",
+			"required" : false,
+			"minimum": 0,
+			"maximum": 1
+		},
+		"ua" : {
+			"description" : "Browser user agent string.",
+			"type" : "string",
+			"required" : false
+		},
+		"ip" : {
+			"description" : "IPv4 address closest to device.",
+			"type" : "string",
+			"required" : false
+		},
+		"didsha1" : {
+			"type" : "string",
+			"required" : false
+		},
+		"didmd5" : {
+			"type" : "string",
+			"required" : false
+		},
+		"dpidsha1" : {
+			"type" : "string",
+			"required" : false
+		},
+		"ip" : {
+			"type" : "string",
+			"required" : false
+		},
+		"dpidmd5" : {
+			"type" : "string",
+			"required" : false
+		},
+		"ip6" : {
+			"type" : "string",
+			"required" : false
+		},
+		"carrier" : {
+			"type" : "string",
+			"required" : false
+		},
+		"language" : {
+			"type" : "string",
+			"required" : false
+		},
+		"ip6" : {
+			"type" : "string",
+			"required" : false
+		},
+		"make" : {
+			"type" : "string",
+			"required" : false
+		},
+		"model" : {
+			"type" : "string",
+			"required" : false
+		},
+		"make" : {
+			"type" : "string",
+			"required" : false
+		},
+		"os" : {
+			"type" : "string",
+			"required" : false
+		},
+		"osv" : {
+			"type" : "string",
+			"required" : false
+		},
+		"js" : {
+			"type" : "integer",
+			"required" : false,
+			"minimum": 0,
+			"maximum": 1
+		},
+		"connectiontype" : {
+			"type" : "integer",
+			"required" : false
+		},
+		"devicetype" : {
+			"type" : "integer",
+			"required" : false
+		},
+		"flashver" : {
+			"type" : "string",
+			"required" : false
+		},
+		"geo" : {
+			"description" : "Geography as derived from the device’s location services (e.g., cell tower triangulation, GPS) or IP address. ",
+			"$ref" : "Geo.json",
+			"required" : false
+		}
+	},
+	"additionalProperties" : false
+}

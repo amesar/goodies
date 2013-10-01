@@ -1,0 +1,25 @@
+{
+	"$schema" : "http://json-schema.org/draft-03/schema#",
+	"id" : "DataItem",
+	"description" : "DataItem",
+	"type" : "object",
+	"properties" : {
+		"id" : {
+			"description" : "Exchange specific ID for the data provider",
+			"type" : "string",
+			"required" : false
+		},
+		"name" : {
+			"description" : "Data provider name",
+			"type" : "string",
+			"required" : false
+		},
+		"segment" : {
+			"description" : "Array of segment objects",
+			"type": "array",
+			"required" : false,
+			"items": { "$ref": "Segment.json" }
+		}
+	},
+	"additionalProperties" : false
+}
