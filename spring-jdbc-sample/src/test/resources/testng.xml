@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+  
+<suite name="Spring JDBC Test Suite" >
+  <test name="Tests"   >
+    <classes>
+      <class name="com.amm.sample.springjdbc.RegionTest" />
+      <class name="com.amm.sample.springjdbc.NationTest" />
+      <class name="com.amm.sample.springjdbc.TransactionTest" />
+    </classes>
+  </test>
+</suite>
