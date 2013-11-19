@@ -17,7 +17,8 @@
     <property name="ignoreResourceNotFound" value="true"/>
     <property name="locations" >
       <list>
-        <value>classpath:appContext.properties</value>
+        <value>classpath:appContext-postgresql.properties</value>  <!-- Default value -->
+        <value>classpath:appContext-${database.provider}.properties</value> <!-- Override from command line with -Ddatabase.provider=mysql -->
       </list>
     </property>
   </bean>
